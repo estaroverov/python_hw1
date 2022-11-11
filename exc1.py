@@ -26,17 +26,25 @@ for x in predicVal:
 # - x=2; y=4-> 1
 # - x=-34; y=-30 -> 3
 
+x = 0
+y = 0
 
 def DetermineQuarter(x, y):
     if x > 0 and y > 0:
         return 1
-    elif x<0 and y>0:
+    elif x < 0 and y > 0:
         return 2
-    elif x<0 and y<0:
+    elif x < 0 and y < 0:
         return 3
     else:
         return 4
 
-x = int(input("Введите x: "))
-y = int(input("Введите y: "))
-print("Четверть №",DetermineQuarter(x ,y))
+
+while (x == 0 or y == 0):
+    x = int(input("Введите x: "))
+    y = int(input("Введите y: "))
+    if x == 0 or y == 0:
+        print("x или y равны 0, введите координаты еще раз")
+
+
+print("Четверть №", DetermineQuarter(x, y))
