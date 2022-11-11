@@ -29,15 +29,22 @@ for x in predicVal:
 x = 0
 y = 0
 
+
 def DetermineQuarter(x, y):
+
+    if x == 0 or y == 0:
+        return "No such quarter"
+
     if x > 0 and y > 0:
-        return 1
+        quarterNumber = 1
     elif x < 0 and y > 0:
-        return 2
+        quarterNumber = 2
     elif x < 0 and y < 0:
-        return 3
+        quarterNumber = 3
     else:
-        return 4
+        quarterNumber = 4
+
+    return quarterNumber
 
 
 while (x == 0 or y == 0):
@@ -48,3 +55,26 @@ while (x == 0 or y == 0):
 
 
 print("Четверть №", DetermineQuarter(x, y))
+
+# Напишите программу, 
+# которая по заданному номеру четверти, 
+# показывает диапазон возможных координат точек в этой четверти (x и y).
+
+def DetermineRange(quarterNumber):
+    if quarterNumber == 1:
+        range = "x = (0,+inf); y = (0,+inf)"
+    elif quarterNumber == 2:
+        range = "x = (0,-inf); y = (0,+inf)"
+    elif quarterNumber == 3:
+        range = "x = (0,-inf); y = (0,-inf)"
+    elif quarterNumber == 4:
+        range = "x = (0,+inf); y = (0,-inf)"
+    else:
+        range = "Нет такой четверти"
+    return range
+
+
+print("Input quarter number: ")
+quarterNumber = int(input())
+rangeMessage = DetermineRange(quarterNumber)
+print(rangeMessage)
