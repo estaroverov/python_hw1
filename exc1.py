@@ -78,3 +78,24 @@ print("Input quarter number: ")
 quarterNumber = int(input())
 rangeMessage = DetermineRange(quarterNumber)
 print(rangeMessage)
+
+
+# Напишите программу, 
+# которая принимает на вход координаты двух точек и 
+# находит расстояние между ними в 2D пространстве.
+def FindLengthDots(a,b): # a = [xa, ya]  # b = [xb, yb]
+    return round(((a[0]-b[0])**2 + (b[1] -a[1])**2)**0.5,2)
+
+def InitDotCoordinates():
+    dot = [0,0]
+    print("Введите координату точки по оси OX:")
+    dot[0] = int(input())
+    print("Введите координату точки по оси OY:")
+    dot[1] = int(input())
+    return dot
+
+print("Введите координаты точки 'A' на плоскости:")
+a = InitDotCoordinates()
+print("Введите координаты точки 'B' на плоскости:")
+b = InitDotCoordinates()
+print("Расстояние между точек равно: ", FindLengthDots(a,b))
