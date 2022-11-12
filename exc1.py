@@ -11,7 +11,7 @@ predicVal = [True, False]
 for x in predicVal:
     for y in predicVal:
         for z in predicVal:
-            if not (x == True or y == True or z == True) == (x != False and y != False and z != False):
+            if not (x or y or z) == (not x and not y and not z):
                 print("x=", x, "y=", y, "z=", z, ".",
                       "Утверждение ¬(X ⋁ Y ⋁ Z) = ¬X ⋀ ¬Y ⋀ ¬Z истинно!")
             else:
